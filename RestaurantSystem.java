@@ -114,5 +114,6 @@ public class RestaurantSystem {
         
         console.close();
         System.out.println("\nExecution complete. Kiosk closed cleanly.");
+        System.out.println("Thank you for visiting " + system.restaurantName + "!");
     }
 }
