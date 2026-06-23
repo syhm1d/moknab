@@ -3,8 +3,8 @@
  * Abstract base parent class defining baseline variables and pricing method.
  */
 public abstract class MenuItem {
-    protected String itemId;
-    protected String itemName;
+    protected final String itemId;
+    protected final String itemName;
     protected double basePrice;
 
     public MenuItem(String itemId, String itemName, double basePrice) {

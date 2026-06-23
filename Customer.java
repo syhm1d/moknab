@@ -9,6 +9,9 @@ public class Customer {
     private int loyaltyPoints;
 
     public Customer(String customerId, String name, String phoneNumber) {
+        if (customerId == null || customerId.isBlank()) throw new IllegalArgumentException("Customer ID cannot be empty");
+        if (name == null || name.isBlank()) throw new IllegalArgumentException("Name cannot be empty");
+        if (phoneNumber == null || phoneNumber.isBlank()) throw new IllegalArgumentException("Phone number cannot be empty");
         this.customerId = customerId;
         this.name = name;
         this.phoneNumber = phoneNumber;

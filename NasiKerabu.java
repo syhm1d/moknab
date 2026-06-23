@@ -3,9 +3,9 @@
  * Specialized concrete MenuItem representing customized traditional rice plates.
  */
 public class NasiKerabu extends MenuItem implements Preparable {
-    private String riceColor;
-    private String proteinType;
-    private boolean addSolokLada;
+    private final String riceColor;
+    private final String proteinType;
+    private final boolean addSolokLada;
 
     public NasiKerabu(String itemId, String itemName, double basePrice, String riceColor, String proteinType, boolean addSolokLada) {
         super(itemId, itemName, basePrice);
@@ -16,7 +16,7 @@ public class NasiKerabu extends MenuItem implements Preparable {
 
     @Override
     public double calculatePrice() {
-        double finalPrice = this.basePrice;
+        double finalPrice = this.getBasePrice();
         if (proteinType.equalsIgnoreCase("Ayam Bakar")) finalPrice += 3.50;
         else if (proteinType.equalsIgnoreCase("Daging Salai")) finalPrice += 5.00;
         
