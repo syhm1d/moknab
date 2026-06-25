@@ -1,8 +1,6 @@
 import java.util.ArrayList;
-
 /**
  * @author Haiqal Razeeq
- * Manages transactional items and coordinates underlying model associations.
  */
 public class Order {
     private String orderId;
@@ -27,7 +25,6 @@ public class Order {
         this.orderStatus = status;
     }
 
-    // Compulsory Polymorphism Loop
     public double computeFinalBill() throws OrderException {
         if (orderItems.isEmpty()) {
             throw new OrderException("Order Error: Cannot checkout an empty shopping basket for Order ID: " + orderId);
@@ -35,7 +32,7 @@ public class Order {
         
         totalPrice = 0.0;
         for (MenuItem item : orderItems) {
-            totalPrice += item.calculatePrice(); // Polymorphic method call
+            totalPrice += item.calculatePrice(); 
         }
         return totalPrice;
     }

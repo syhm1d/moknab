@@ -1,10 +1,9 @@
 /**
  * @author Afiq Irfan
  */
-public class SideDish extends MenuItem implements Preparable {
-    
+public class Drink extends MenuItem implements Preparable {
 
-    public SideDish(String itemId, String itemName, double basePrice) {
+    public Drink(String itemId, String itemName, double basePrice) {
         super(itemId, itemName, basePrice);
     }
 
@@ -15,16 +14,16 @@ public class SideDish extends MenuItem implements Preparable {
 
     @Override
     public void startPreparation() {
-        System.out.println("[KITCHEN] Preparing " + this.getItemName());
+        System.out.println("[BARISTA] Brewing " + this.getItemName() + ".");
     }
 
     @Override
     public void completePreparation() {
-        System.out.println("[KITCHEN] " + this.getItemName() + " is ready to be served.");
+        System.out.println("[BARISTA] Drink " + this.getItemName() + " is ready to be served.");
     }
 
     @Override
     public int getPrepTimeEstimation() {
-        return 4;
+        return 3;
     }
 }

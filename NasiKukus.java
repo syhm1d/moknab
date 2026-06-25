@@ -1,16 +1,15 @@
 /**
  * @author Afiq Irfan
  */
-public class NasiKerabu extends MenuItem implements Preparable {
+public class NasiKukus extends MenuItem implements Preparable { 
 
-    public NasiKerabu(String itemId, String itemName, double basePrice) {
-        super(itemId, itemName, basePrice); 
+    public NasiKukus(String itemId, String itemName, double basePrice) {
+        super(itemId, itemName, basePrice);
     }
 
     @Override
     public double calculatePrice() {
-        double finalPrice = this.getBasePrice();        
-        return finalPrice;
+        return this.getBasePrice(); 
     }
 
     @Override
@@ -25,8 +24,6 @@ public class NasiKerabu extends MenuItem implements Preparable {
 
     @Override
     public int getPrepTimeEstimation() {
-        
-        return 10; 
+        return 7;
     }
-
 }
