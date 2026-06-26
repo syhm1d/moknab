@@ -1,8 +1,8 @@
 /**
- * @author Afiq Irfan / Naqyuddin
+ * @author Haiqal Razeeq
  */
-public interface Preparable {
-    void startPreparation();
+public interface Preparable { //apply interface
+    void startPreparation(); 
     void completePreparation();
     int getPrepTimeEstimation();
 }

@@ -1,10 +1,10 @@
 /**
- * @author Afiq Irfan
+ * @author Haiqal Razeeq
  */
 public class OrderReceipt {
-    private Order trackingOrder;
+    private Order trackingOrder; //Association with Order class
 
-    public OrderReceipt(Order trackingOrder) {
+    public OrderReceipt(Order trackingOrder) { //Constructor to initialize the OrderReceipt with the associated Order
         this.trackingOrder = trackingOrder;
     }
 

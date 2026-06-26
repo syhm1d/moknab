@@ -1,12 +1,12 @@
 /**
- * @author Afiq Irfan
+ * @author Naqyuddin
  */
 public class Customer {
     private String customerId;
     private String name;
     private String phoneNumber;
 
-    public Customer(String customerId, String name, String phoneNumber) {
+    public Customer(String customerId, String name, String phoneNumber) { //apply exception handling
         if (name == null || name.isBlank()) throw new IllegalArgumentException("Name cannot be empty, please provide a valid name");
         if (phoneNumber == null || phoneNumber.isBlank()) throw new IllegalArgumentException("Phone number cannot be empty, please provide a valid phone number");
         this.customerId = customerId;

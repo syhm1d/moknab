@@ -4,20 +4,20 @@ import java.util.ArrayList;
  */
 public class Order {
     private String orderId;
-    private ArrayList<MenuItem> orderItems;
+    private ArrayList<MenuItem> orderItems; //Association with MenuItem class
     private String orderStatus;
     private double totalPrice;
-    private Customer customer;
+    private Customer customer; // Association with Customer class
 
-    public Order(String orderId, Customer customer) {
+    public Order(String orderId, Customer customer) { //Constructor to initialize the Order with the associated Customer
         this.orderId = orderId;
         this.customer = customer;
-        this.orderItems = new ArrayList<>();
+        this.orderItems = new ArrayList<>(); // Initialize the orderItems list
         this.orderStatus = "Pending";
         this.totalPrice = 0.0;
     }
 
-    public void addItem(MenuItem item) {
+    public void addItem(MenuItem item) { //apply association with MenuItem class
         orderItems.add(item);
     }
 
@@ -25,7 +25,7 @@ public class Order {
         this.orderStatus = status;
     }
 
-    public double computeFinalBill() throws OrderException {
+    public double computeFinalBill() throws OrderException { //apply exception handling
         if (orderItems.isEmpty()) {
             throw new OrderException("Order Error: Cannot checkout an empty shopping basket for Order ID: " + orderId);
         }
@@ -37,8 +37,8 @@ public class Order {
         return totalPrice;
     }
 
-    public ArrayList<MenuItem> getOrderItems() { return orderItems; }
+    public ArrayList<MenuItem> getOrderItems() { return orderItems; } //apply encapsulation
     public String getOrderId() { return orderId; }
-    public Customer getCustomer() { return customer; }
+    public Customer getCustomer() { return customer; } //apply encapsulation
     public String getOrderStatus() { return orderStatus; }
 }

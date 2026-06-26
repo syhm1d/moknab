@@ -2,18 +2,18 @@ import java.util.Scanner;
 import java.util.InputMismatchException;
 
 /**
- * @author Afiq Irfan
+ * @author Adam Syahmi
  */
 public class RestaurantSystem {
     private String restaurantName;
-    private MenuItem[] menuInventory;
+    private MenuItem[] menuInventory; //Association with MenuItem class
 
     public RestaurantSystem(String restaurantName) {
         this.restaurantName = restaurantName;
         initializeCatalog();
     }
 
-    private void initializeCatalog() {
+    private void initializeCatalog() { //Apply array  
         menuInventory = new MenuItem[12];
         
         //MAKANAN
@@ -63,7 +63,7 @@ public class RestaurantSystem {
         System.out.println("===============================================");
     }
 
-    private static void clearScreen() {
+    private static void clearScreen() { 
         try {
             if (System.getProperty("os.name").contains("Windows")) {
                 new ProcessBuilder("cmd", "/c", "cls").inheritIO().start().waitFor();
@@ -77,7 +77,7 @@ public class RestaurantSystem {
         }
     }
 
-    private static Customer handleCustomerRegistration(Scanner console) {
+    private static Customer handleCustomerRegistration(Scanner console) { //Method to handle customer registration
         System.out.println("===============================================");
         System.out.println("                    MOKNAB                     "); 
         System.out.println("===============================================");
@@ -88,7 +88,7 @@ public class RestaurantSystem {
         return new Customer("C001", nameInput, phoneInput);
     }
 
-    private void processOrderingWorkflow(Scanner console, Customer customer, Order activeOrder) {
+    private void processOrderingWorkflow(Scanner console, Customer customer, Order activeOrder) { //Method to process the ordering workflow
         int currentStage = 1;
         boolean systemRunning = true;
 
@@ -105,7 +105,7 @@ public class RestaurantSystem {
             System.out.println("===============================================");
             System.out.print("Enter your choice: ");
             
-            try {
+            try { //Exception handling for user input
                 int menuChoice = console.nextInt();
                 
                 if (menuChoice == 13) {
@@ -152,11 +152,11 @@ public class RestaurantSystem {
         }
     }
 
-    private static void finalizeCheckout(Scanner console, Order activeOrder) throws OrderException {
+    private static void finalizeCheckout(Scanner console, Order activeOrder) throws OrderException { //Apply exception handling for checkout process
         clearScreen();
         
         double amountOwed = activeOrder.computeFinalBill();
-        OrderReceipt billingPrinter = new OrderReceipt(activeOrder);
+        OrderReceipt billingPrinter = new OrderReceipt(activeOrder); //Association with OrderReceipt class
         activeOrder.setOrderStatus("Completed");
         System.out.println("===============================================");
         System.out.println("                    MOKNAB                     "); 
@@ -177,7 +177,7 @@ public class RestaurantSystem {
         console.nextLine(); console.nextLine();
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) { //Main method to run the restaurant system
         RestaurantSystem system = new RestaurantSystem("MOKNAB");
         Scanner console = new Scanner(System.in);
         

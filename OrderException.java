@@ -1,7 +1,7 @@
 /**
- * @author Haiqal Razeeq / Naqyuddin
+ * @author Afiq Irfan
  */
-public class OrderException extends Exception {
+public class OrderException extends Exception { //apply inheritance & Exception Handling
     public OrderException(String message) {
         super(message);
     }

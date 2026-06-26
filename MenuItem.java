@@ -1,7 +1,7 @@
 /**
  * @author Adam Syahmi
  */
-public abstract class MenuItem {
+public abstract class MenuItem { //apply abstraction
     protected final String itemId;
     protected final String itemName;
     protected double basePrice;
@@ -16,9 +16,9 @@ public abstract class MenuItem {
     public String getItemName() { return itemName; }
     public double getBasePrice() { return basePrice; }
 
-    public abstract double calculatePrice();
+    public abstract double calculatePrice(); //apply polymorphim and abstraction
 
-    @Override
+    @Override //apply polymorphim
     public String toString() {
         return String.format("%s (ID: %s) - Base Price: RM%.2f", itemName, itemId, basePrice);
     }
